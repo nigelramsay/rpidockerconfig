@@ -1,0 +1,11 @@
+version: '2'
+services:
+  solarcontrol:
+    build: $SOLARCONTROL_BASE
+    network_mode: host
+    volumes:
+      - $SOLARCONTROL_BASE:/solarcontrol
+      - solarcontrol-bundle-cache:/bundle
+volumes:
+  solarcontrol-bundle-cache: {}
+
