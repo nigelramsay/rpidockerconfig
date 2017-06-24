@@ -6,6 +6,13 @@ services:
     volumes:
       - $SOLARCONTROL_BASE:/solarcontrol
       - solarcontrol-bundle-cache:/bundle
+  nginx:
+    image: armhfbuild/nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d/solar.ramsay.org.nz.conf:/etc/nginx/conf.d/solar.ramsay.org.nz.conf
 volumes:
   solarcontrol-bundle-cache: {}
 
